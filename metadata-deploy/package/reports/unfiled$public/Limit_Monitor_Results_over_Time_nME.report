@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <aggregates>
+        <acrossGroupingContext>COLUMN_GRAND_SUMMARY</acrossGroupingContext>
+        <calculatedFormula>Limit_Monitor_Test_Result__c.SOQL_Queries__c:MAX - PRIORVALUE(Limit_Monitor_Test_Result__c.SOQL_Queries__c:MAX)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA1</developerName>
+        <downGroupingContext>ROW_GRAND_SUMMARY</downGroupingContext>
+        <isActive>false</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>Change over previous</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <aggregates>
+        <acrossGroupingContext>Limit_Monitor_Test_Result__c.Job__c</acrossGroupingContext>
+        <calculatedFormula>Limit_Monitor_Test_Result__c.SOQL_Queries__c:MAX-PREVGROUPVAL(Limit_Monitor_Test_Result__c.SOQL_Queries__c:MAX, Limit_Monitor_Test_Result__c.Job__c)</calculatedFormula>
+        <datatype>number</datatype>
+        <developerName>FORMULA2</developerName>
+        <downGroupingContext>Limit_Monitor_Test_Result__c.Full_Method_Name__c</downGroupingContext>
+        <isActive>true</isActive>
+        <isCrossBlock>false</isCrossBlock>
+        <masterLabel>SOQL Change</masterLabel>
+        <scale>0</scale>
+    </aggregates>
+    <colorRanges>
+        <columnName>FORMULA2</columnName>
+        <highBreakpoint>0.0</highBreakpoint>
+        <highColor>#006714</highColor>
+        <lowBreakpoint>-1.0</lowBreakpoint>
+        <lowColor>#B50E03</lowColor>
+        <midColor>#FFFFFF</midColor>
+    </colorRanges>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Limit_Monitor_Test_Result__c.SOQL_Queries__c</field>
+    </columns>
+    <columns>
+        <aggregateTypes>Sum</aggregateTypes>
+        <field>Limit_Monitor_Test_Result__c.CPU_Time__c</field>
+    </columns>
+    <description>See the trend of your limit usages over time, per each unit test. 
+Check off &quot;Stack Summaries&quot; for optimal view.</description>
+    <format>Matrix</format>
+    <formattingRules>
+        <columnName>FORMULA2</columnName>
+        <values>
+            <backgroundColor>#B50E03</backgroundColor>
+            <rangeUpperBound>-1.0</rangeUpperBound>
+        </values>
+        <values>
+            <rangeUpperBound>0.0</rangeUpperBound>
+        </values>
+        <values>
+            <backgroundColor>#006714</backgroundColor>
+        </values>
+    </formattingRules>
+    <groupingsAcross>
+        <dateGranularity>Day</dateGranularity>
+        <field>Limit_Monitor_Test_Result__c.Job__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsAcross>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Limit_Monitor_Test_Result__c.Full_Method_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Limit Monitor Results over Time</name>
+    <params>
+        <name>co</name>
+        <value>0</value>
+    </params>
+    <reportType>CustomEntity$Limit_Monitor_Test_Result__c</reportType>
+    <scope>organization</scope>
+    <showDetails>false</showDetails>
+    <showGrandTotal>false</showGrandTotal>
+    <showSubTotals>true</showSubTotals>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

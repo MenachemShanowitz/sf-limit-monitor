@@ -1,0 +1,26 @@
+{
+  "name": "sf-limit-monitor",
+  "version": "1.0.0",
+  "description": "Track changes in governor limit usage (e.g., SOQL queries) in a Salesforce org over time using automated Apex test execution and log analysis.",
+  "type": "module",
+  "main": "src/cli.js",
+  "bin": {
+    "sf-limit-monitor": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node src/cli.js",
+    "deploy-metadata": "node metadata-deploy/scripts/deploy-metadata.js",
+    "discover-tests": "node src/cli.js discover-tests",
+    "run-tests": "node src/cli.js run"
+  },
+  "dependencies": {
+    "commander": "^11.1.0",
+    "jsforce": "^3.4.3",
+    "jszip": "^3.10.1",
+    "soap": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "license": "MIT"
+}

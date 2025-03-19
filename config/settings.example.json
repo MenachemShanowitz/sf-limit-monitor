@@ -1,0 +1,16 @@
+{
+  "auth": {
+    "type": "client_credentials",
+    "clientId": "YOUR_CONNECTED_APP_CLIENT_ID",
+    "clientSecret": "YOUR_CONNECTED_APP_CLIENT_SECRET",
+    "loginUrl": "https://mydomain.my.salesforce.com"
+  },
+  "tests": {
+    "classes": [
+      {
+        "className": "MyTestClass",
+        "methods": ["testMethod1", "testMethod2"]
+      }
+    ]
+  }
+}

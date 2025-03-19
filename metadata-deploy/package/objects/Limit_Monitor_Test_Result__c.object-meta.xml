@@ -1,0 +1,141 @@
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Limit Monitor Test Result</label>
+    <pluralLabel>Limit Monitor Test Results</pluralLabel>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>ReadWrite</sharingModel>
+    <nameField>
+        <type>AutoNumber</type>
+        <label>Result Number</label>
+        <displayFormat>RES-{0000}</displayFormat>
+    </nameField>
+    <enableReports>true</enableReports>
+    <fields>
+        <fullName>Job__c</fullName>
+        <type>Lookup</type>
+        <referenceTo>Limit_Monitor_Test_Job__c</referenceTo>
+        <relationshipName>Test_Results</relationshipName>
+        <relationshipLabel>Test Results</relationshipLabel>
+        <label>Limit Monitor Test Job</label>
+        <required>true</required>
+        <deleteConstraint>Restrict</deleteConstraint>
+    </fields>
+    <fields>
+        <fullName>Class_Name__c</fullName>
+        <type>Text</type>
+        <label>Class Name</label>
+        <length>255</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>Method_Name__c</fullName>
+        <type>Text</type>
+        <label>Method Name</label>
+        <length>255</length>
+        <required>true</required>
+    </fields>
+    <fields>
+        <fullName>SOQL_Queries__c</fullName>
+        <type>Number</type>
+        <label>SOQL Queries</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Query_Rows__c</fullName>
+        <type>Number</type>
+        <label>Query Rows</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>SOSL_Queries__c</fullName>
+        <type>Number</type>
+        <label>SOSL Queries</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>DML_Statements__c</fullName>
+        <type>Number</type>
+        <label>DML Statements</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>DML_Rows__c</fullName>
+        <type>Number</type>
+        <label>DML Rows</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>CPU_Time__c</fullName>
+        <type>Number</type>
+        <label>CPU Time (ms)</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Heap_Size__c</fullName>
+        <type>Number</type>
+        <label>Heap Size (bytes)</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Callouts__c</fullName>
+        <type>Number</type>
+        <label>Callouts</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Email_Invocations__c</fullName>
+        <type>Number</type>
+        <label>Email Invocations</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Future_Calls__c</fullName>
+        <type>Number</type>
+        <label>Future Calls</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Queueable_Jobs__c</fullName>
+        <type>Number</type>
+        <label>Queueable Jobs</label>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Success__c</fullName>
+        <type>Checkbox</type>
+        <label>Success</label>
+        <defaultValue>false</defaultValue>
+    </fields>
+    <fields>
+        <fullName>Failure_Message__c</fullName>
+        <type>LongTextArea</type>
+        <label>Failure Message</label>
+        <length>32768</length>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Execution_Time__c</fullName>
+        <type>Number</type>
+        <label>Execution Time (ms)</label>
+        <description>Actual run time in milliseconds</description>
+        <precision>18</precision>
+        <scale>0</scale>
+    </fields>
+    <fields>
+        <fullName>Full_Method_Name__c</fullName>
+        <label>Full Method Name</label>
+        <type>Text</type>
+        <formula>Class_Name__c &amp; "." &amp; Method_Name__c</formula>
+        <formulaTreatBlanksAs>BlankAsBlank</formulaTreatBlanksAs>
+    </fields>
+</CustomObject>
