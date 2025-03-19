@@ -26,7 +26,7 @@ Track changes in governor limit usage (e.g., SOQL queries) in a Salesforce org o
 ```bash
 git clone https://github.com/MenachemShanowitz/sf-limit-monitor.git
 cd sf-limit-monitor
-npm install -g
+npm install
 ```
 
 ### Authentication
