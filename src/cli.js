@@ -90,10 +90,16 @@ program
         ORDER BY Name
       `;
 
-      const classes = await conn.query(query);
+      let lastClassesResult = await conn.query(query);
+      const allClasses = [...lastClassesResult.records];
+      while (!lastClassesResult.done) {
+        lastClassesResult = await conn.queryMore(lastClassesResult.nextRecordsUrl);
+        allClasses.push(...lastClassesResult.records);
+      }
+
       const testClasses = [];
 
-      for (const cls of classes.records) {
+      for (const cls of allClasses) {
 
         // Skip if class doesn't contain any test indicators
         if (!/(@istest|testmethod)/i.test(cls.Body)) {
