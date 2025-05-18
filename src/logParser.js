@@ -20,7 +20,9 @@ export class LogParser {
     // Looks for all lines immediately following "|LIMIT_USAGE_FOR_NS|(default)|" until it hits the next timestamp.
     // All lines that contain the limit information for the default namespace (i.e. not a managed package) follow this pattern
     const limitSections = [...log.matchAll(/\|LIMIT_USAGE_FOR_NS\|\(default\)\|\n((?:.*\n)*?)(\d{2}:\d{2}:\d{2}|$)/g)];
-    if (!limitSections.length) return null;
+    if (!limitSections.length) {
+      throw 'Required log results not found. Please ensure no competing logs are set up or developer console open for this user.';
+    }
 
     const metrics = {};
     
